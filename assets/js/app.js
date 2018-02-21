@@ -1,3 +1,17 @@
+$(document).ready(function() {
+  /* función para mostrar splash */
+  setTimeout(function () {
+    $(".video-intro").fadeOut(1500);
+  }, 12000);
+  /*
+  *función para mostrar contenido de la página
+  */
+  setTimeout(function () {
+    $(".content").fadeIn(1500);
+  }, 3500);
+})
+
+
 $('#myModal').modal('toggle');
 
 function registrar() {
@@ -55,19 +69,46 @@ observador();
 
 function aparece(user) {
   var user = user;
-  var contenido = document.getElementById('contenido');
   if (user.emailVerified) {
-    contenido.innerHTML = `
-    <p>Bienvenido</p>
-    <button id="cerrar" onclick="cerrar()">Cerrar sesión</button>
-  `;
+    $('.content').empty();
+    $('.content').append(`
+      <div>
+        <img id="img-logo" src="assets/img/Marvel-logo.png" alt="">
+        <button id="perfil" type="button" class="btn btn-primary mb-2 mr-2">Mi Perfil</button>
+        <button type="button" class="btn btn-primary mb-2 mr-2" onclick="cerrar()">Cerrar Sesión</button>
+      </div>
+    `);
   }
 }
 
 function cerrar() {
   firebase.auth().signOut()
   .then(function () {
-    $('#contenido').empty();
+    $('.content').empty();
+    $('.content').append(`
+      <div class="row">
+        <div class="col align-self-center">
+          <img src="assets/img/Marvel-logo.png" class="rounded logo" alt="">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col align-self-center formulario">
+          <form>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email</label>
+              <input type="email" class="form-control" id="emailInicio" aria-describedby="emailHelp" placeholder="name@example.com">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Contraseña</label>
+              <input type="password" class="form-control" id="passInicio" placeholder="mínimo 6 caracteres">
+            </div>
+            <button type="submit" class="btn" data-dismiss="modal" onclick="inicioSesion()">Iniciar Sesión</button>
+          </form>
+          <hr>
+          <button type="button" class="btn mb-2 mr-2" data-toggle="modal" data-target="#formRegistro">Registrarse</button>
+        </div>
+      </div>
+    `);
     console.log('Saliendo...');
   })
   .catch(function () {

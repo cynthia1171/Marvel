@@ -1,0 +1,46 @@
+body {
+  background-color: #000;
+}
+
+.splash {
+  background-color: #000;
+}
+
+video {
+  margin-top: -3em;
+}
+
+.content {
+  display: none;
+  color: #fff;
+}
+
+.logo {
+  width: 30%;
+  height: auto;
+  margin: 0 33%;
+}
+hr {
+  background-color: #fff;
+}
+.formulario {
+  width: 31%;
+  margin-left: 26%;
+  margin-right: 30%;
+  margin-top: 3%;
+}
+
+.formulario button {
+  width: 100%;
+  color: #fff;
+  background-color: #ed1a23;
+  border-color: #ed1a23;
+}
+
+.content #img-logo {
+  width: 10%;
+}
+
+.content #perfil {
+  margin-left: 2%;
+}
