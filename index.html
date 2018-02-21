@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +8,7 @@
   <title>Marvel</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
-  <link rel="stylesheet" href="assets/css/style.css">  
-  <!-- firestore -->
-  <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-firestore.js"></script>
+  <link rel="stylesheet" href="assets/css/style.css">
   <script src="https://www.gstatic.com/firebasejs/4.10.0/firebase.js"></script>
   <script>
     // Initialize Firebase
@@ -25,69 +23,58 @@
     firebase.initializeApp(config);
   </script>
 </head>
+
 <body>
-  <!-- Modal formulario de registro -->
-  <div class="modal fade" id="formRegistro" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Formulario de registro</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="form-group">
-              <label for="exampleInputEmail1">Email</label>
-              <input type="email" class="form-control" id="emailReg" aria-describedby="emailHelp" placeholder="name@example.com">
-            </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Contraseña</label>
-              <input type="password" class="form-control" id="passIReg" placeholder="mínimo 6 caracteres">
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-          <button type="submit" class="btn btn-primary" data-dismiss="modal" onclick="registrar()">Registrarse</button>
-        </div>
+  <div class="content">
+    <div class="col align-self-center">
+      <img src="assets/img/Marvel-logo.png" class="rounded logo" alt="" onclick="inicio()">
+    </div>
+    <div class="formulario">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email</label>
+        <input type="email" class="form-control" id="emailIngreso" aria-describedby="emailHelp" placeholder="name@example.com">
       </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Contraseña</label>
+        <input type="password" class="form-control" id="passwordIngreso" placeholder="mínimo 6 caracteres">
+      </div>
+      <button type="button" class="btn mb-2 mr-2" onclick="inicio()">Iniciar Sesión</button>
+      <hr>
+      <button type="button" class="btn mb-2 mr-2" data-toggle="modal" data-target="#formRegistro">Registrarse
     </div>
   </div>
-  <!-- fin modal -->
-
-  <!-- div splash -->
-  <div class="splash">
-    <video class="video-intro" src="assets/img/Marvel.mp4" muted="muted" autoplay="autoplay"></video>
-  </div>
-  <!-- fin splash -->
-
-  <div class="content container">
-    <div class="row">
-      <div class="col align-self-center">
-        <img src="assets/img/Marvel-logo.png" class="rounded logo" alt="">
+  
+<!-- pagina de inicio -->
+<div class="inicio">
+  <img id="img-logo" src="assets/img/Marvel-logo.png" alt="">
+  <button id="perfil" type="button" class="btn btn-primary mb-2 mr-2" onclick="miPerfil()">Mi Perfil</button>
+  <button type="button" class="btn btn-primary mb-2 mr-2" onclick="cerrar()">Cerrar Sesión</button>
+ 
+  <div class="principal">
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="d-block w-100" src="assets/img/black-panter.jpg" alt="First slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="assets/img/iron-man.jpg" alt="Second slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="assets/img/x-men.jpg" alt="Third slide">
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col align-self-center formulario">
-        <form>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email</label>
-            <input type="email" class="form-control" id="emailInicio" aria-describedby="emailHelp" placeholder="name@example.com">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Contraseña</label>
-            <input type="password" class="form-control" id="passInicio" placeholder="mínimo 6 caracteres">
-          </div>
-          <button type="submit" class="btn" data-dismiss="modal" onclick="inicioSesion()">Iniciar Sesión</button>
-        </form>
-        <hr>
-        <button type="button" class="btn mb-2 mr-2" data-toggle="modal" data-target="#formRegistro">Registrarse</button>
-      </div>
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
   </div>
-
+</div>
+<!-- fin pagina de inicio -->
 
   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
@@ -96,4 +83,5 @@
     crossorigin="anonymous"></script>
   <script src="assets/js/app.js"></script>
 </body>
+
 </html>

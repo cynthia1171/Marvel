@@ -10,22 +10,18 @@ video {
   margin-top: -3em;
 }
 
-.content {
-  display: none;
-  color: #fff;
-}
-
 .logo {
-  width: 30%;
+  width: 23%;
   height: auto;
-  margin: 0 33%;
+  margin: 0 37%;
 }
 hr {
   background-color: #fff;
 }
 .formulario {
+  color: #fff;
   width: 31%;
-  margin-left: 26%;
+  margin-left: 33%;
   margin-right: 30%;
   margin-top: 3%;
 }
@@ -37,10 +33,14 @@ hr {
   border-color: #ed1a23;
 }
 
-.content #img-logo {
+.inicio {
+  display: none;
+}
+
+.inicio #img-logo {
   width: 10%;
 }
 
-.content #perfil {
+.inicio #perfil {
   margin-left: 2%;
 }
