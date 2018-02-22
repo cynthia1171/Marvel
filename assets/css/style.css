@@ -2,6 +2,10 @@ body {
   background-color: #000;
 }
 
+h3 {
+  margin-top: 1em;
+  color: #fff;
+}
 .splash {
   background-color: #000;
 }
@@ -15,7 +19,7 @@ video {
   height: auto;
   margin: 0 37%;
 }
-hr {
+.formulario hr {
   background-color: #fff;
 }
 .formulario {
@@ -39,10 +43,48 @@ hr {
 
 .inicio #img-logo {
   width: 10%;
+  cursor: pointer;
 }
 
 .inicio #perfil {
   margin-left: 2%;
+}
+
+<<<<<<< HEAD
+.card{
+  display: inline-block;
+  margin-right: 2em;
+  margin-bottom: 2em;
+}
+
+.card-body{
+  height: 10em;
+}
+
+.card-img-top{
+  height: 10em;
+}
+.icon-heart:before {
+  content: "\e9da";
+  padding-right: 1em;
+  font-size: 2em;
+  color: #ed1a23;
+}
+
+#fav-icon {
+  content: "\e9da"!important;
+  color: #ed1a23;
+  font-size: 10px;
+}
+
+.icon-plus:before {
+  content: "\ea0a";
+  padding-right: 1em;
+}
+
+#eliminar {
+  margin-left: 3em;
+  margin-top: -20px;
 }
 
 .card{
