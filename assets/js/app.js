@@ -48,6 +48,7 @@ function aparece(user) {
   var user = user;
   if (user.emailVerified) {
     $('.content').hide();
+    $('.perfil').hide();
     $('.inicio').show();
   }
 }
@@ -75,4 +76,14 @@ function verificar() {
     // An error happened.
     console.log(error);
   });
+}
+
+function pagPrincipal() {
+  $('.principal').show();
+  $('.perfil').hide();
+}
+
+function miPerfil() {
+  $('.principal').hide();
+  $('.perfil').show();
 }
