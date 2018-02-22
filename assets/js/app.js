@@ -1,3 +1,35 @@
+$(document).ready(()=>{
+  $.ajax({
+    url: 'https://gateway.marvel.com:443/v1/public/characters?&limit=30&ts=1&apikey=0647f843f1ab4120557f28aa3a5ddcb7&hash=970540f1cb8980e782ca8e5476e0e4b4',
+    type: 'GET',
+    datatype: 'json'
+  })
+  .done(function(response){
+    console.log(response);
+    showCharacters(response)
+  })
+  .fail(function(error){
+    console.log('error')
+  })
+})
+
+function showCharacters(charac){
+  var characterInfo = charac.data.results;
+  for (let i = 0; i < characterInfo.length; i++){
+    console.log(characterInfo[i].name);
+      $('#comics').append(`<div class="card text-white bg-dark" style="width: 12rem;">
+  <img class="card-img-top" src="${characterInfo[i].thumbnail.path + '.' + characterInfo[i].thumbnail.extension}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">${characterInfo[i].name}</h5>
+    <a href="#" class="btn btn-primary">See more!</a>
+  </div>
+</div>`)
+  }
+}
+
+
+
+
 function registrar() {
   var email = $('#emailReg').val();
   var password = $('#passIReg').val();

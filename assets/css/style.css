@@ -44,3 +44,17 @@ hr {
 .inicio #perfil {
   margin-left: 2%;
 }
+
+.card{
+  display: inline-block;
+  margin-right: 2em;
+  margin-bottom: 2em;
+}
+
+.card-body{
+  height: 10em;
+}
+
+.card-img-top{
+  height: 10em;
+}
