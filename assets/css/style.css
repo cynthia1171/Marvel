@@ -50,20 +50,6 @@ video {
   margin-left: 2%;
 }
 
-<<<<<<< HEAD
-.card{
-  display: inline-block;
-  margin-right: 2em;
-  margin-bottom: 2em;
-}
-
-.card-body{
-  height: 10em;
-}
-
-.card-img-top{
-  height: 10em;
-}
 .icon-heart:before {
   content: "\e9da";
   padding-right: 1em;
@@ -99,4 +85,8 @@ video {
 
 .card-img-top{
   height: 10em;
+}
+
+#comics{
+  margin-top: 2em;
 }
