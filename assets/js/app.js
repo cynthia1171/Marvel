@@ -1,6 +1,9 @@
 $(document).ready(()=>{
+  /*
+  *llamado ajax para obtener data
+  */
   $.ajax({
-    url: 'https://gateway.marvel.com:443/v1/public/characters?&limit=30&ts=1&apikey=0647f843f1ab4120557f28aa3a5ddcb7&hash=970540f1cb8980e782ca8e5476e0e4b4',
+    url: 'https://gateway.marvel.com:443/v1/public/characters?&limit=100&ts=1&apikey=0647f843f1ab4120557f28aa3a5ddcb7&hash=970540f1cb8980e782ca8e5476e0e4b4',
     type: 'GET',
     datatype: 'json'
   })
@@ -11,25 +14,44 @@ $(document).ready(()=>{
   .fail(function(error){
     console.log('error')
   })
-})
+});
 
+/*
+*función que crea tarjetas
+*/
 function showCharacters(charac){
   var characterInfo = charac.data.results;
   for (let i = 0; i < characterInfo.length; i++){
-    console.log(characterInfo[i].name);
-      $('#comics').append(`<div class="card text-white bg-dark" style="width: 12rem;">
-  <img class="card-img-top" src="${characterInfo[i].thumbnail.path + '.' + characterInfo[i].thumbnail.extension}" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">${characterInfo[i].name}</h5>
-    <a href="#" class="btn btn-primary">See more!</a>
-  </div>
-</div>`)
-  }
-}
+    var id = characterInfo[i].id;
+    //console.log(id);
+    if(characterInfo[i].thumbnail.path !== "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available"){
+    $('#comics').append(`<div class="card text-white bg-dark" style="width: 11.5rem;" id="card_${id}">
+    <img class="card-img-top" src="${characterInfo[i].thumbnail.path + '.' + characterInfo[i].thumbnail.extension}" alt="Card image cap">
+    <div class="card-body"><h5 class="card-title">${characterInfo[i].name}</h5>
+    <a data-toggle="modal" href="#myModal" class="btn btn-primary" id="btn_${id}">See more!</a></div></div>`);
+    }
+    $('#btn_' + id).click(function(){
+      //borrar contenido modal
+      $('#titleModal, #description, #idSup').empty();
+      $('#titleModal').append('Name: ' + characterInfo[i].name);
+      $('#idSup').append('Id: ' + characterInfo[i].id)
+      $('#description').append(characterInfo[i].description)
+    });
+  };
+};
+
+/*
+*función que llena modal con info de cada personaje
+*/
 
 
 
 
+
+
+/*
+*funciones firebase
+*/
 function registrar() {
   var email = $('#emailReg').val();
   var password = $('#passIReg').val();

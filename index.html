@@ -76,54 +76,34 @@
         <span class="sr-only">Next</span>
       </a>
     </div>
-<!--     <div class="container">
-      <div class="row">
-        <h3>Personajes de Marvel</h3>
-        <hr class="white">
-      </div>
-      <div class="row">
-        <div id="cards">
-          <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="assets/img/default-01.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">
-                <span id="fav-icon" class="icon-heart"></span>Favorito</a>
-              <a href="#" class="btn btn-primary">
-                <span class="icon-plus"></span>Agregar</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="perfil container">
-    <h3>Personajes favoritos </h3>
-    <hr>
-    <div class="row">
-      <div class="cardFav">
-        <div class="card" style="width: 18rem;">
-          <img class="card-img-top" src="assets/img/default-01.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <span class="icon-heart"></span>
-            <a id="eliminar" href="#" class="btn btn-primary">
-              <span class="icon-plus"></span>Eliminar</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- fin pagina de inicio -->
+<!--
+fin pagina de inicio -->
 <div class="container">
   <div class="row">
     <div class="col-lg-12 col-md-12" id="comics" >
     </div>
   </div>
-</div> -->
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="titleModal"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5 id="idSup"></h5>
+        <p id="description"></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
